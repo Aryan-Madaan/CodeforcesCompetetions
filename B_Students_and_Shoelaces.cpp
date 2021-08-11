@@ -38,18 +38,53 @@ int gcd(int a, int b)
 void solve()
 {
     int t=1;
-    cin >> t;
+    //cin >> t;
     while(t--)
     {
-        int n;
-        cin>>n;
-        vector<pair<int,int>>pp(n);
-        vector<int>row(1000,0),col(1000,0);
-        rep(i,n)
+        int n,m;
+        cin >> n >> m;
+        unordered_map<int,vector<int>>ma;
+        vector<bool>v(n,0);
+        vector<int>v1;
+        rep(i,m)
         {
-            cin>>pp[i].ff >> pp[i].ss;
+            int x,y;
+            cin >> x >>y;
+            ma[x-1].pb(y-1);
+            ma[y-1].pb(x-1);
+            v[x-1]=v[y-1]=1;
         }
-
+        int cnt=0;
+        bool f=1;
+        while(f){
+            f=0;
+            rep(i,n)
+            {
+                int count=0;
+                if(v[i])
+                {
+                    rep(j,ma[i].size())
+                    {
+                        if(v[ma[i][j]]){
+                            count++;
+                        }
+                    }
+                    if(count>0&&count<2)
+                    {
+                        v1.pb(i);
+                        f=1;
+                    }
+                }
+            }
+            rep(i,v1.size())
+            {
+                v[v1[i]]=0;
+            }
+            if(f)
+            cnt++;
+            v1.clear();
+        }
+        cout <<cnt;
     }
 }
 /*

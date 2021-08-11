@@ -38,18 +38,24 @@ int gcd(int a, int b)
 void solve()
 {
     int t=1;
-    cin >> t;
+    //cin >> t;
     while(t--)
     {
         int n;
-        cin>>n;
-        vector<pair<int,int>>pp(n);
-        vector<int>row(1000,0),col(1000,0);
+        unordered_map<string,int>pp;
+        cin >> n;
+        int ma =0;
+        pp["polycarp"]=1;
         rep(i,n)
         {
-            cin>>pp[i].ff >> pp[i].ss;
+            string s,s1;
+            cin >> s >> s1 >> s1;
+            transform(s.begin(), s.end(), s.begin(), ::tolower);
+            transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+                pp[s]=pp[s1]+1;
+                ma = max(pp[s],ma);
         }
-
+        cout << ma;
     }
 }
 /*

@@ -41,15 +41,7 @@ void solve()
     cin >> t;
     while(t--)
     {
-        int n;
-        cin>>n;
-        vector<pair<int,int>>pp(n);
-        vector<int>row(1000,0),col(1000,0);
-        rep(i,n)
-        {
-            cin>>pp[i].ff >> pp[i].ss;
-        }
-
+        
     }
 }
 /*

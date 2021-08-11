@@ -42,19 +42,41 @@ void solve()
     while(t--)
     {
         int n;
-        cin>>n;
-        vector<pair<int,int>>pp(n);
-        vector<int>row(1000,0),col(1000,0);
+        cin >> n;
+        string s;
+        cin >> s;
+        bool f=1;
+        int turns=0;
         rep(i,n)
         {
-            cin>>pp[i].ff >> pp[i].ss;
+            if(turns==0&&s[i]=='<')
+            turns=1;
+            else if(turns==0&&s[i]=='>')
+            turns=2;
+            if(turns==2&&s[i]=='<')
+            f=0;
+            else if(turns==1&&s[i]=='>')
+            f=0;
         }
-
+        ll ret=0;
+        rep(i,n)
+        {
+            // if(s[i]=='-'&&s[(i+1)%n]=='-')
+            ret++;
+            if(s[i]=='<'&&s[(i+1)%n]=='>')
+            ret--;
+            if(s[i]=='>'&&s[(i+1)%n]=='<')
+            ret--;
+            if((s[i]=='>'&&s[(i+1)%n]=='>')&&!f)
+            ret--;
+            if((s[i]=='<'&&s[(i+1)%n]=='<')&&!f)
+            ret--;
+        }
+        cout << ret <<endl;
     }
 }
 /*
 */
-
 
 
 
