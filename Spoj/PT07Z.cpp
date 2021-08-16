@@ -33,15 +33,49 @@ int gcd(int a, int b)
 //---------------------------------------------------------------------------------------------------
 
 
+int max_distance=0,point=0,point1=0;
 
+void dfs(vector<vector<int>>&v,vector<bool>&visit,int i,int dist)
+{
+    visit[i]=0;
+    if(dist>max_distance)
+    {
+        point = i;
+        max_distance=dist;
+    }
+    rep(j,v[i].size())
+    {
+        if(visit[v[i][j]])
+        {
+            dfs(v,visit,v[i][j],dist+1);
+        }
+    }
+}
 
 void solve()
 {
     int t=1;
-    cin >> t;
+    //cin >> t;
     while(t--)
     {
-        
+        int n,x,y,data =0;
+        cin >> n;
+        vector<vector<int>>v(n);
+        rep(i,n-1)
+        {
+            cin >> x >> y;
+            v[x-1].pb(y-1);
+            v[y-1].pb(x-1);
+            data=x-1;
+        }
+        vector<bool>visit(n,1),visit1(n,1);
+        int d=0;
+        dfs(v,visit,data,d);
+        max_distance=0;
+        point1=point;
+        d=0;
+        dfs(v,visit1,point1,d);
+        cout << max_distance;
     }
 }
 /*
@@ -59,5 +93,3 @@ int main() {
     solve();
     return 0;
 }
-
-
