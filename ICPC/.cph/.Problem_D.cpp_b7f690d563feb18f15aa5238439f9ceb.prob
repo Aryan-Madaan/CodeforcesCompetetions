@@ -1,0 +1,1 @@
+{"name":"Local: Problem_D","url":"/Users/aryanmadaan/Documents/CodeforcesCompetetions/ICPC/Problem_D.cpp","tests":[{"id":1629380869953,"input":"3\n2\n12 10\n4\n4 2 3 1\n4\n3 4 1 2","output":"NO\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/aryanmadaan/Documents/CodeforcesCompetetions/ICPC/Problem_D.cpp","group":"local","local":true}
