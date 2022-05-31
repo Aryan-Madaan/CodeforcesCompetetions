@@ -1,0 +1,1 @@
+{"name":"Local: Stringrot","url":"/Users/aryanmadaan/Documents/CodeforcesCompetetions/Geeksforgeeks/Stringrot.cpp","tests":[{"id":1653555734489,"input":"1\nABCCD\nCDABA","output":"Yes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/aryanmadaan/Documents/CodeforcesCompetetions/Geeksforgeeks/Stringrot.cpp","group":"local","local":true}
