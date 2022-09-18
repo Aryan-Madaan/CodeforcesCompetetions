@@ -5,7 +5,7 @@ using namespace std;
 
 // Define the number of runs for the test data
 // generated
-#define RUN 5
+#define RUN 1000
 
 // Define the range of the test data generated
 // Here it is 'a' to 'z'
@@ -21,7 +21,7 @@ int main()
 	srand(time(NULL));
 
 	for (int i=1; i<=RUN; i++)
-		printf("%c\n", 'a' + rand() % MAX);
+		printf("%c", 'a' + rand() % MAX);
 
 	// Uncomment the below line to store
 	// the test data in a file

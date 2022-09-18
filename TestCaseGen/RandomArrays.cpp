@@ -5,13 +5,13 @@ using namespace std;
  
 // Define the number of runs for the test data
 // generated
-#define RUN 5
+#define RUN 4
  
 // Define the range of the test data generated
-#define MAX 10000000
+#define MAX 2
  
 // Define the maximum number of array elements
-#define MAXNUM 100
+#define MAXNUM 1000000
  
 int main()
 {
@@ -25,15 +25,39 @@ int main()
     for (int i=1; i<=RUN; i++)
     {
         // Number of array elements
-        int NUM = 1 + rand() % MAXNUM;
- 
+        // int NUM = 1 + rand() % MAXNUM;
+        int NUM = MAXNUM;
+        int mul = 1;
+        
         // First print the number of array elements
-        printf("%d\n", NUM);
+        // printf("%d\n", NUM);
  
         // Then print the array elements separated
         // by space
-        for (int j=1; j<=NUM; j++)
-            printf("%d ", rand() % MAX);
+        for (int j=1; j<=NUM; j++){
+        //     if(rand()%2)
+        // mul = -1;
+        // else
+        // mul = 1;
+            if(j==1)
+            printf("%d ", mul *(rand() % MAX));
+            else if(j!=NUM)
+            printf("%d ", mul *(rand() % MAX));
+            else
+            {
+                printf("%d", mul *(rand() % MAX));
+            }
+        }
+        // for (int j=1; j<=NUM; j++){
+        //                 if(j==1)
+        //     printf("[0,");
+        //     else if(j!=NUM)
+        //     printf("0,");
+        //     else
+        //     {
+        //         printf("0]");
+        //     }
+        // }
  
         printf("\n");
     }

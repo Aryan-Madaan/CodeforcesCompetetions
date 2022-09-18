@@ -6,10 +6,10 @@ using namespace std;
 
 // Define the number of runs for the test data
 // generated
-#define RUN 5
+#define RUN 1
 
 // Define the maximum number of nodes of the tree
-#define MAXNODE 20
+#define MAXNODE 1000
 
 class Tree
 {
@@ -107,8 +107,8 @@ bool Tree::isCyclic()
 
 int main()
 {
-	set<pair<int, int>> container;
-	set<pair<int, int>>::iterator it;
+	set<pair<int, int> > container;
+	set<pair<int, int> >::iterator it;
 
 	// Uncomment the below line to store
 	// the test data in a file
