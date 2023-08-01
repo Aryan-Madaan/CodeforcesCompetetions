@@ -49,27 +49,34 @@ void solve()
         cin >> n>>m;
         vector<vector<int> > graph(n);
         vector<bool>vis(n,0);
-        queue<int> qq;
+        queue<pair<int,int> > qq;
         rep(i,m)
         {
             cin >> a >> b;
             graph[a-1].pb(b-1);
             graph[b-1].pb(a-1);
         }
-        qq.push(0);
+        int mindist = INT_MAX;
+        qq.push(mp(0,0));
         while(!qq.empty())
         {
-            vis[qq.front()]=1;
-            cout << qq.front() <<" ";
-            rep(i,graph[qq.front()].size())
+            vis[qq.front().first]=1;
+            // cout << qq.front() <<" ";
+            if(qq.front().first==n-1)
+                    mindist = min(mindist,qq.front().second);
+
+            rep(i,graph[qq.front().first].size())
             {
-                if(!vis[graph[qq.front()][i]])
+                if(graph[qq.front().first][i]==n-1)
+                    mindist = min(mindist,qq.front().second+1);
+                if(!vis[graph[qq.front().first][i]])
                 {
-                    qq.push(graph[qq.front()][i]);
+                    qq.push(mp(graph[qq.front().first][i],qq.front().second+1));
                 }
             }
             qq.pop();
         }
+        cout << mindist <<"\n";
     }
 }
 /*
