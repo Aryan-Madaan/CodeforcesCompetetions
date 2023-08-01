@@ -8,10 +8,10 @@ using namespace std;
 #define RUN 4
  
 // Define the range of the test data generated
-#define MAX 2
+#define MAX 100000
  
 // Define the maximum number of array elements
-#define MAXNUM 1000000
+#define MAXNUM 400000
  
 int main()
 {
@@ -35,10 +35,10 @@ int main()
         // Then print the array elements separated
         // by space
         for (int j=1; j<=NUM; j++){
-        //     if(rand()%2)
-        // mul = -1;
-        // else
-        // mul = 1;
+            if(rand()%2)
+        mul = -1;
+        else
+        mul = 1;
             if(j==1)
             printf("%d ", mul *(rand() % MAX));
             else if(j!=NUM)

@@ -1,0 +1,1 @@
+{"name":"Local: Longest Path in a Tree","url":"/Users/aryanmadaan/Documents/CodeforcesCompetetions/In/Longest Path in a Tree.cpp","tests":[{"id":1690788909936,"input":"3\n1 2\n2 3","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/aryanmadaan/Documents/CodeforcesCompetetions/In/Longest Path in a Tree.cpp","group":"local","local":true}
